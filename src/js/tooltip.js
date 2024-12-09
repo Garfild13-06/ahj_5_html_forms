@@ -1,12 +1,12 @@
-export class Tooltip {
+export default class Tooltip {
   constructor() {
     this._tooltips = [];
   }
 
   showTooltip(message, element) {
-    const tooltipElement = document.createElement("DIV");
+    const tooltipElement = document.createElement('DIV');
 
-    tooltipElement.classList.add("form-error");
+    tooltipElement.classList.add('form-error');
     tooltipElement.textContent = message;
 
     const id = performance.now();
@@ -20,9 +20,8 @@ export class Tooltip {
 
     const { right, top } = element.getBoundingClientRect();
 
-    tooltipElement.style.left = right + 5 + "px";
-    tooltipElement.style.top =
-      top + element.offsetHeight / 2 - tooltipElement.offsetHeight / 2 + "px";
+    tooltipElement.style.left = `${right + 5}px`;
+    tooltipElement.style.top = `${top + element.offsetHeight / 2 - tooltipElement.offsetHeight / 2}px`;
 
     return id;
   }

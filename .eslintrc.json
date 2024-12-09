@@ -1,9 +1,4 @@
 {
-  "ignores": [
-    "**/dist/**",
-    "**/coverage/**",
-    "**/doc/**"
-  ],
   "extends": "airbnb-base",
   "env": {
     "es6": true,
@@ -11,6 +6,8 @@
     "jest": true
   },
   "rules": {
+    "no-console": "off",
+    "no-underscore-dangle": "off",
     "no-restricted-syntax": [
       "error",
       "LabeledStatement",

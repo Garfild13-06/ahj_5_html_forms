@@ -1,12 +1,12 @@
 // TODO: write code here
 
-console.log("app.js bundled");
+console.log('app.js bundled');
 
-const form = document.querySelector("form");
+const form = document.querySelector('form');
 let error = null;
 
 // form.noValidate = true;
-form.addEventListener("submit", (evt) => {
+form.addEventListener('submit', (evt) => {
   evt.preventDefault();
 
   // old error removing
@@ -21,11 +21,10 @@ form.addEventListener("submit", (evt) => {
 
     console.log(form.elements);
     first.focus();
-    error = document.createElement("div");
-    error.dataset.id = "error";
-    error.className = "form-error";
-    error.textContent =
-      "Большой текст сообщения об ошибке на основании ValidityState";
+    error = document.createElement('div');
+    error.dataset.id = 'error';
+    error.className = 'form-error';
+    error.textContent = 'Большой текст сообщения об ошибке на основании ValidityState';
 
     // for relative positioning inside container
     first.offsetParent.appendChild(error);

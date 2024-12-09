@@ -1,11 +1,14 @@
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { merge } = require('webpack-merge');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  mode: "production",
+  mode: 'production', // Режим продакшн
   optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
+    minimize: true, // Минимизируем код
+    minimizer: [
+      new CssMinimizerPlugin(), // Минимизируем CSS
+      // new TerserPlugin(), // Минимизируем JS
+    ],
   },
 });

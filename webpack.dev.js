@@ -1,22 +1,14 @@
-const webpack = require("webpack");
-const { merge } = require("webpack-merge");
-const common = require("./webpack.common");
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
-  // Set the mode to development or production
-  mode: "development",
-  // Control how source maps are generated
-  devtool: "inline-source-map",
-
-  // Spin up a server for quick development
+  mode: 'development', // Режим разработки
+  devtool: 'inline-source-map', // Source maps для отладки
   devServer: {
-    historyApiFallback: true,
-    open: true,
-    compress: true,
+    static: './dist', // Папка для раздачи файлов
+    historyApiFallback: true, // Поддержка SPA
+    open: true, // Автоматически открывать браузер
+    compress: true, // Сжатие
+    port: 8080, // Порт сервера
   },
-
-  plugins: [
-    // Only update what has changed on hot reload
-    new webpack.HotModuleReplacementPlugin(),
-  ],
 });
