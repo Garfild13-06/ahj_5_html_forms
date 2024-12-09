@@ -13,7 +13,7 @@ body {
   display: inline-block;
 }
 
-.btn {
+.popover-btn {
   padding: 15px 30px;
   background-color: red;
   color: white;

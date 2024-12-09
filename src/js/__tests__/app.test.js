@@ -1,6 +1,6 @@
-const puppeteer = require('puppeteer'); // Подключаем puppeteer
+const puppeteer = require("puppeteer"); // Подключаем puppeteer
 
-describe('Popover button interaction', () => {
+describe("Popover button interaction", () => {
   let browser;
   let page;
 
@@ -12,7 +12,7 @@ describe('Popover button interaction', () => {
     browser = await puppeteer.launch({ headless: true });
     page = await browser.newPage();
     // Открываем страницу для теста
-    await page.goto('http://localhost:8080/'); // Укажите свой локальный URL
+    await page.goto("http://localhost:8080/"); // Укажите свой локальный URL
   });
 
   afterAll(async () => {
@@ -22,11 +22,10 @@ describe('Popover button interaction', () => {
     }
   });
 
-  it('should show popover on button click', async () => {
+  it("should show popover on button click", async () => {
     // Ожидание, что поповер будет отображен после клика на кнопку
-    await page.click('.popover-btn');
-    const popover = await page.$('.popover');
-    expect(popover)
-      .toBeTruthy(); // Проверяем, что поповер появился
+    await page.click(".popover-btn");
+    const popover = await page.$(".popover");
+    expect(popover).toBeTruthy(); // Проверяем, что поповер появился
   });
 });
