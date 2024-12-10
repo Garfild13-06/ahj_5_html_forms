@@ -33,7 +33,8 @@
     "jest": "latest",
     "jsdoc": "latest",
     "live-server": "latest",
-    "md-converter": "latest"
+    "md-converter": "latest",
+    "puppeteer": "latest"
   },
   "dependencies": {
     "core-js": "latest",
