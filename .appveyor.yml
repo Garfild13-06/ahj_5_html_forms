@@ -18,7 +18,11 @@ build_script:
   - npm run build   # команда сборки
 
 test_script:
-  - npm run lint && npm test  # скрипт тестирования
+#  - npm run lint && npm test  # скрипт тестирования
+  - npm run lint
+  - npm start & sleep 5
+  - npm test
+  - kill $(jobs -p)
 
 deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
