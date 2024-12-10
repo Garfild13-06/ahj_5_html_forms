@@ -19,6 +19,7 @@ build_script:
 
 test_script:
   - npm run lint
+  - npx puppeteer browsers install chrome
   - npm start & sleep 10
   - npm test
 #  - kill $(jobs -p)
